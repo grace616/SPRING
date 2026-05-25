@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ <bean class="com.learn.model.User" id="user">
+		 <property name="userId" value="1"></property>
+		 <property name="name" value="grace"></property>
+		 <property name="mail" value="grace@gmail.com"></property>
+		 <property name="skills">
+		 		<list>
+		 			<value>Java</value>
+		 			<value>Spring</value>
+		 			<value>SpringBoot</value>
+		 			<value>Hibernate</value>
+		 			<value>Microservices</value>
+		 		</list>
+		 </property>
+		 <property name="uniqueSkills">
+		 		<set>
+		 			<value>HTML</value>
+		 			<value>HTML</value>
+		 			<value>CSS</value>
+		 			<value>JS</value>
+		 			<value>Angular</value>
+		 		</set>
+		 </property>
+		 <property name="hobbies">
+		 		<map>
+		 		<entry key ="1" value="Badminton"></entry>
+		 		<entry key ="2" value="reading books"></entry>
+		 		<entry key ="3" value="sleeping"></entry>
+		 		</map>
+		 </property>
+ </bean>
+ 
+ 
+ <!-- singleton behaviour broken because creating bean for same class -->
+ 
+ <bean class="com.learn.model.User" id="user1">
+		<constructor-arg value="2"></constructor-arg>
+		<constructor-arg value="robbie"></constructor-arg>
+		<constructor-arg value="robbie@gmail.com"></constructor-arg>
+ </bean>
+ 
+ </beans>
